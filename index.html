@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Yeni Yılım 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0b1d3a, #000814);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  padding: 42px 28px;
+  text-align: center;
+  max-width: 340px;
+  box-shadow: 0 0 45px rgba(255,255,255,0.15);
+  animation: fadeIn 2s ease;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.signature {
+  margin-top: 18px;
+  font-size: 14px;
+  opacity: 0.85;
+  animation: fadeUp 2.5s ease;
+}
+
+.heart {
+  font-size: 34px;
+  margin-top: 12px;
+  animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.snow {
+  position: fixed;
+  top: -10px;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>
+    Herkes yeni yıla,<br>
+    sen yıllarıma birtanem
+  </h1>
+
+  <div class="heart">🤍</div>
+
+  <div class="signature">
+    Kaan’dan İclale 🤍
+  </div>
+</div>
+
+<script>
+for (let i = 0; i < 60; i++) {
+  const snow = document.createElement("div");
+  snow.className = "snow";
+  snow.innerHTML = "❄";
+  snow.style.left = Math.random() * 100 + "vw";
+  snow.style.animationDuration = (3 + Math.random() * 5) + "s";
+  snow.style.opacity = Math.random();
+  snow.style.fontSize = (10 + Math.random() * 22) + "px";
+  document.body.appendChild(snow);
+}
+</script>
+
+</body>
+</html>
